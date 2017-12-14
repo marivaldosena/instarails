@@ -6,7 +6,7 @@ class PicsController < ApplicationController
   end
 
   def show
-    find_pic
+    # find_pic
   end
 
   def new
@@ -19,8 +19,26 @@ class PicsController < ApplicationController
     if @pic.save
       redirect_to @pic, notice: 'Yesss! It was posted!'
     else
-      render 'new'
+      render :new
     end
+  end
+
+  def edit
+    # find_pic
+  end
+
+  def update
+    if @pic.update(pic_params)
+      redirect_to @pic, notice: 'Congrats! Pic was updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @pic.destroy
+
+    redirect_to root_path
   end
 
   private
@@ -28,7 +46,7 @@ class PicsController < ApplicationController
     begin
       @pic = Pic.find(params[:id])
     rescue
-        redirect_to root_path, notice: "There's no pics in the typed in location!"
+      redirect_to root_path, notice: "There's no pics in the typed in location!"
     end
   end
 
