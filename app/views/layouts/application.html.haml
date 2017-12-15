@@ -9,10 +9,21 @@
 %body
   %nav.navbar.navbar-inverse
     .container
-      .navbar-brand= link_to 'Instagram', root_path
+      .navbar-header
+        %button{ type: 'button', class: %w(navbar-toggle collapsed),
+           'data-toggle': 'collapse', 'data-target': '#navegacao',
+           'aria-expanded': false, 'aria-controls': 'navbar' }
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
 
-      %ul.nav.navbar-nav.navbar-left
+        .navbar-brand= link_to 'Instagram', root_path
+
+      #navegacao.navbar-collapse.collapse
+        %ul.nav.navbar-nav.navbar-left
         - if user_signed_in?
+
           %li= link_to 'Gram It!', new_pic_path
           %li= link_to 'Settings', edit_user_registration_path
           %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
