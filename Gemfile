@@ -32,6 +32,8 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'devise', '~> 4.3'
 # Paperclip
 gem 'paperclip', '~> 5.1'
+# Masonry
+gem 'masonry-rails', '~> 0.2.1'
 
 
 
