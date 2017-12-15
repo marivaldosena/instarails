@@ -30,6 +30,10 @@ gem 'simple_form', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3'
 # Devise
 gem 'devise', '~> 4.3'
+# Paperclip
+gem 'paperclip', '~> 5.1'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
